@@ -1,4 +1,4 @@
-# ♜ BlitzClock
+# ⏱ BlitzClock
 
 A modern chess clock built with SwiftUI.
 
