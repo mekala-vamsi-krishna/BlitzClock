@@ -22,8 +22,8 @@ class ChessClockViewModel: ObservableObject {
     }
     
     // Configurable styles via UserDefaults/AppStorage
-    @AppStorage("activeColorHex") var activeColorHex: String = "#00FF00" // Green
-    @AppStorage("warningColorHex") var warningColorHex: String = "#FF0000" // Red
+    @AppStorage("activeColorHex") var activeColorHex: String = "#2E6F40" // Green
+    @AppStorage("warningColorHex") var warningColorHex: String = "#FF0035" // Red
     
     private var timer: DispatchSourceTimer?
     private let timerQueue = DispatchQueue(label: "com.chessclock.timer", qos: .userInteractive)
