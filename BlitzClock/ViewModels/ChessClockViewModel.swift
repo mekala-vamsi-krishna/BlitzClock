@@ -276,6 +276,34 @@ class ChessClockViewModel: ObservableObject {
             UserDefaults.standard.set(encoded, forKey: "customTimeControl")
         }
     }
+    
+    func addTime(to side: PlayerSide, seconds: TimeInterval) {
+        guard gameState == .paused else { return }
+
+        switch side {
+        case .top:
+            topPlayer.timeRemaining += seconds
+
+        case .bottom:
+            bottomPlayer.timeRemaining += seconds
+        }
+
+        updateColors()
+    }
+
+    func subtractTime(from side: PlayerSide, seconds: TimeInterval) {
+        guard gameState == .paused else { return }
+
+        switch side {
+        case .top:
+            topPlayer.timeRemaining = max(0, topPlayer.timeRemaining - seconds)
+
+        case .bottom:
+            bottomPlayer.timeRemaining = max(0, bottomPlayer.timeRemaining - seconds)
+        }
+
+        updateColors()
+    }
 }
 
 // Helper for Color Hex
